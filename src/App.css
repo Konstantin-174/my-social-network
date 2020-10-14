@@ -13,3 +13,8 @@
     color: #01ff2b;
     margin: 0 auto;
 }
+
+.app_wrapper_content {
+    grid-area: c;
+    background-color: slategray;
+}
