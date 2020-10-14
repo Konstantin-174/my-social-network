@@ -8,3 +8,7 @@
     text-decoration-line: none;
     color: #01ff2b;
 }
+
+.nav a.active {
+    color: yellowgreen;
+}

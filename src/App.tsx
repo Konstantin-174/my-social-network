@@ -5,18 +5,21 @@ import {Navbar} from './components/navbar/Navbar';
 import {Profile} from './components/profile/Profile';
 import {Footer} from './components/footer/Footer';
 import {Dialogs} from './components/dialogs/Dialogs';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="app_wrapper">
-        <Header/>
-        <Navbar/>
-        <div className="app_wrapper_content">
-            <Dialogs/>
-            {/*<Profile/>*/}
+    <BrowserRouter>
+        <div className="app_wrapper">
+            <Header/>
+            <Navbar/>
+            <div className="app_wrapper_content">
+                <Route path="/profile" render={Profile}/>
+                <Route path="/dialogs" render={Dialogs}/>
+            </div>
+            <Footer/>
         </div>
-        <Footer/>
-    </div>
+    </BrowserRouter>
   );
 }
 
