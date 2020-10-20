@@ -9,6 +9,7 @@ export function Navbar() {
                 <NavLink to="/profile" activeClassName={s.active}>Profile</NavLink>
             </div>
             <div>
+                {/* Задача NavLink без перезагрузки поменять url в адресной строке браузера (аналог тега </a>) */}
                 <NavLink to="/dialogs" activeClassName={s.active}>Messages</NavLink>
             </div>
             <div>
