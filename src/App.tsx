@@ -6,12 +6,12 @@ import {Profile} from './components/profile/Profile';
 import {Footer} from './components/footer/Footer';
 import {Dialogs} from './components/dialogs/Dialogs';
 import {BrowserRouter, Route} from 'react-router-dom';
-import { dialogsType, messageType, postsType } from './redux/state';
+import { DialogsType, MessageType, PostsType } from './redux/state';
 
 type AppPropsType = {
-    dialogs: Array<dialogsType>
-    messages: Array<messageType>
-    posts: Array<postsType>
+    dialogs: Array<DialogsType>
+    messages: Array<MessageType>
+    posts: Array<PostsType>
 }
 
 function App(props: AppPropsType) {
