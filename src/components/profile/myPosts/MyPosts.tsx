@@ -5,15 +5,20 @@ import {PostsType} from '../../../redux/state';
 
 type MyPostsPropsType = {
     posts: Array<PostsType>
+    addPost: (postText: string) => void
 }
 
 export function MyPosts(props: MyPostsPropsType) {
 
     let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>)
 
+    /*Ниже добавляем новый элемент в массив постов (новый пост на стене) */
     let newPostElement = React.createRef<HTMLTextAreaElement>();
-    let addPost = () => {
-        alert(newPostElement.current?.value);
+    const addPost = () => {
+        if (newPostElement.current) {
+            props.addPost(newPostElement.current.value)
+            newPostElement.current.value = ""; //Очищение поля <textarea> после ввода данных
+        }
     }
 
     return (

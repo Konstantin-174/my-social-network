@@ -1,3 +1,5 @@
+import {rerenderApp} from '../render';
+
 export type DialogsType = {
     id: number
     name: string
@@ -20,7 +22,7 @@ type ProfilePageType = {
     posts: Array<PostsType>
 }
 
-type RootStateType = {
+export type RootStateType = {
     dialogsPage: DialogsPageType
     profilePage: ProfilePageType
 }
@@ -45,4 +47,14 @@ export let state: RootStateType = {
             {id: 2, message: "Keep calm and do hard working!!!", likesCount: 25},
         ] as Array<PostsType>
     }
+}
+
+export const addPost = (postText: string) => {
+    const newPost: PostsType = {
+        id: 3,
+        message: postText,
+        likesCount: 0
+    };
+    state.profilePage.posts.push(newPost);
+    rerenderApp(state);
 }
