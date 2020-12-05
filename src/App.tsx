@@ -13,6 +13,8 @@ type AppPropsType = {
     messages: Array<MessageType>
     posts: Array<PostsType>
     addPost: (postText: string) => void
+    updateNewPostText: (text: string) => void
+    newText: string
 }
 
 function App(props: AppPropsType) {
@@ -22,8 +24,11 @@ function App(props: AppPropsType) {
                 <Header/>
                 <Navbar/>
                 <div className="app_wrapper_content">
-                    <Route path="/profile" render={() => <Profile addPost={props.addPost}
-                                                                  posts={props.posts}/>}/>
+                    <Route path="/profile" render={() => <Profile updateNewPostText={props.updateNewPostText}
+                                                                  addPost={props.addPost}
+                                                                  posts={props.posts}
+                                                                  newText={props.newText}
+                    />}/>
                     <Route path="/dialogs" render={() => <Dialogs dialogs={props.dialogs}
                                                                   messages={props.messages}/>}/>
                 </div>

@@ -20,6 +20,7 @@ type DialogsPageType = {
 }
 type ProfilePageType = {
     posts: Array<PostsType>
+    newText: string
 }
 
 export type RootStateType = {
@@ -45,16 +46,23 @@ export let state: RootStateType = {
         posts: [
             {id: 1, message: "Hey bro! What's up?", likesCount: 12},
             {id: 2, message: "Keep calm and do hard working!!!", likesCount: 25},
-        ] as Array<PostsType>
+        ] as Array<PostsType>,
+        newText: "" as string
     }
 }
 
-export const addPost = (postText: string) => {
+export const addPost = () => {
     const newPost: PostsType = {
         id: 3,
-        message: postText,
+        message: state.profilePage.newText,
         likesCount: 0
     };
     state.profilePage.posts.push(newPost);
+    state.profilePage.newText = ""
+    rerenderApp(state);
+}
+
+export const updateNewPostText = (text: string) => {
+    state.profilePage.newText = text
     rerenderApp(state);
 }
