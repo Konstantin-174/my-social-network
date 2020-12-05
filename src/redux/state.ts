@@ -1,5 +1,3 @@
-import {rerenderApp} from '../render';
-
 export type DialogsType = {
     id: number
     name: string
@@ -51,6 +49,10 @@ export let state: RootStateType = {
     }
 }
 
+let rerenderApp = (state: RootStateType) => {
+    console.log("State changed!")
+}
+
 export const addPost = () => {
     const newPost: PostsType = {
         id: 3,
@@ -65,4 +67,8 @@ export const addPost = () => {
 export const updateNewPostText = (text: string) => {
     state.profilePage.newText = text
     rerenderApp(state);
+}
+
+export const subscribe = (observer: (state: RootStateType) => void) => {
+    rerenderApp = observer
 }
