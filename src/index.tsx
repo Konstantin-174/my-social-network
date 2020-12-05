@@ -5,7 +5,6 @@ import React from 'react';
 import App from './App';
 import {addPost, updateNewPostText, RootStateType} from './redux/state';
 
-
 export const rerenderApp = (state: RootStateType) => {
     ReactDOM.render(
         <React.StrictMode>

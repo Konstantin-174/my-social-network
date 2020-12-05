@@ -49,7 +49,7 @@ export let state: RootStateType = {
     }
 }
 
-let rerenderApp = (state: RootStateType) => {
+let fakeApp = (state: RootStateType) => {
     console.log("State changed!")
 }
 
@@ -61,14 +61,14 @@ export const addPost = () => {
     };
     state.profilePage.posts.push(newPost);
     state.profilePage.newText = ""
-    rerenderApp(state);
+    fakeApp(state);
 }
 
 export const updateNewPostText = (text: string) => {
     state.profilePage.newText = text
-    rerenderApp(state);
+    fakeApp(state);
 }
 
 export const subscribe = (observer: (state: RootStateType) => void) => {
-    rerenderApp = observer
+    fakeApp = observer
 }
