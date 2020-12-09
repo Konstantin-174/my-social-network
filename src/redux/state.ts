@@ -26,49 +26,59 @@ export type RootStateType = {
     profilePage: ProfilePageType
 }
 
-export let state: RootStateType = {
-    dialogsPage: {
-        dialogs: [
-            {id: 1, name: 'Dimon'},
-            {id: 2, name: 'Vovan'},
-            {id: 3, name: 'Andrew'},
-            {id: 4, name: 'Antony'}
-        ] as Array<DialogsType>,
-        messages: [
-            {id: 1, message: "Hey guys! How are you doing?"},
-            {id: 1, message: "Hey bro! We're fine, thanks"},
-            {id: 1, message: "Antony! Where is my money!?"}
-        ] as Array<MessageType>
+export type StoreType = {
+    _state: RootStateType
+    _callSubscriber: () => void
+    addPost: () => void
+    updateNewPostText: (text: string) => void
+    getState: () => RootStateType
+    subscribe: (observer: any) => void
+}
+
+export let store: StoreType = {
+    _state: {
+        dialogsPage: {
+            dialogs: [
+                {id: 1, name: 'Dimon'},
+                {id: 2, name: 'Vovan'},
+                {id: 3, name: 'Andrew'},
+                {id: 4, name: 'Antony'}
+            ] as Array<DialogsType>,
+            messages: [
+                {id: 1, message: "Hey guys! How are you doing?"},
+                {id: 1, message: "Hey bro! We're fine, thanks"},
+                {id: 1, message: "Antony! Where is my money!?"}
+            ] as Array<MessageType>
+        },
+        profilePage: {
+            posts: [
+                {id: 1, message: "Hey bro! What's up?", likesCount: 12},
+                {id: 2, message: "Keep calm and do hard working!!!", likesCount: 25},
+            ] as Array<PostsType>,
+            newText: "" as string
+        }
     },
-    profilePage: {
-        posts: [
-            {id: 1, message: "Hey bro! What's up?", likesCount: 12},
-            {id: 2, message: "Keep calm and do hard working!!!", likesCount: 25},
-        ] as Array<PostsType>,
-        newText: "" as string
+    addPost() {
+        const newPost: PostsType = {
+            id: 3,
+            message: this._state.profilePage.newText,
+            likesCount: 0
+        };
+        this._state.profilePage.posts.push(newPost);
+        this._state.profilePage.newText = ""
+        this._callSubscriber();
+    },
+    updateNewPostText(text: string) {
+        this._state.profilePage.newText = text
+        this._callSubscriber();
+    },
+    _callSubscriber() {
+        console.log("State changed!")
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer
+    },
+    getState() {
+        return this._state
     }
-}
-
-let fakeApp = (state: RootStateType) => {
-    console.log("State changed!")
-}
-
-export const addPost = () => {
-    const newPost: PostsType = {
-        id: 3,
-        message: state.profilePage.newText,
-        likesCount: 0
-    };
-    state.profilePage.posts.push(newPost);
-    state.profilePage.newText = ""
-    fakeApp(state);
-}
-
-export const updateNewPostText = (text: string) => {
-    state.profilePage.newText = text
-    fakeApp(state);
-}
-
-export const subscribe = (observer: (state: RootStateType) => void) => {
-    fakeApp = observer
 }

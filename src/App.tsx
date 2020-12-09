@@ -6,31 +6,26 @@ import {Profile} from './components/profile/Profile';
 import {Footer} from './components/footer/Footer';
 import {Dialogs} from './components/dialogs/Dialogs';
 import {BrowserRouter, Route} from 'react-router-dom';
-import {DialogsType, MessageType, PostsType} from './redux/state';
+import {StoreType} from './redux/state';
 
 type AppPropsType = {
-    dialogs: Array<DialogsType>
-    messages: Array<MessageType>
-    posts: Array<PostsType>
-    addPost: (postText: string) => void
-    updateNewPostText: (text: string) => void
-    newText: string
+    store: StoreType
 }
 
 function App(props: AppPropsType) {
+    const state = props.store.getState()
+
     return (
         <BrowserRouter>
             <div className="app_wrapper">
                 <Header/>
                 <Navbar/>
                 <div className="app_wrapper_content">
-                    <Route path="/profile" render={() => <Profile updateNewPostText={props.updateNewPostText}
-                                                                  addPost={props.addPost}
-                                                                  posts={props.posts}
-                                                                  newText={props.newText}
+                    <Route path="/profile" render={() => <Profile state={state}
+                                                                  addPost={props.store.addPost.bind(props.store)}
+                                                                  updateNewPostText={props.store.updateNewPostText.bind(props.store)}
                     />}/>
-                    <Route path="/dialogs" render={() => <Dialogs dialogs={props.dialogs}
-                                                                  messages={props.messages}/>}/>
+                    <Route path="/dialogs" render={() => <Dialogs state={state}/>}/>
                 </div>
                 <Footer/>
             </div>
