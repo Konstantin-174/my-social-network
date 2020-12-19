@@ -25,7 +25,6 @@ export type RootStateType = {
     dialogsPage: DialogsPageType
     profilePage: ProfilePageType
 }
-
 export type StoreType = {
     _state: RootStateType
     _callSubscriber: () => void
@@ -36,15 +35,16 @@ export type StoreType = {
 
 type AddPostActionType = {
     type: "ADD-POST"
-    text: string
+    newText: string
 }
-
 type UpdateNewPostTextActionType = {
     type: "UPDATE-NEW-POST-TEXT"
-    text: string
+    newText: string
 }
-
 export type ActionTypes = AddPostActionType | UpdateNewPostTextActionType
+
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
 export let store: StoreType = {
     _state: {
@@ -91,8 +91,19 @@ export let store: StoreType = {
             this._state.profilePage.newText = ""
             this._callSubscriber();
         } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-            this._state.profilePage.newText = action.text
+            this._state.profilePage.newText = action.newText
             this._callSubscriber();
         }
     }
 }
+
+export const addPostAC = (newText: string): AddPostActionType => ({
+    type: ADD_POST,
+    newText: newText
+})
+
+export const updateNewPostTextAC = (newText: string): UpdateNewPostTextActionType => ({
+    type: UPDATE_NEW_POST_TEXT,
+    newText: newText
+})
+
