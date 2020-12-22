@@ -2,11 +2,12 @@ import React from 'react';
 import s from './Dialogs.module.css'
 import {Dialog} from './dialog/Dialog';
 import {Message} from './message/Message';
-import {ActionTypes, newMessageTextAC, RootStateType, sendNewMessageTextAC} from '../../redux/state';
+import {DialogsActionTypes, newMessageTextAC, sendNewMessageTextAC} from '../../redux/dialogsReducer';
+import { RootStateType } from '../../redux/state';
 
 type DialogsPropsType = {
     state: RootStateType
-    dispatch: (action: ActionTypes) => void
+    dispatch: (action: DialogsActionTypes) => void
 }
 
 export function Dialogs(props: DialogsPropsType) {
