@@ -3,17 +3,19 @@ import s from './Dialogs.module.css'
 import {Dialog} from './dialog/Dialog';
 import {Message} from './message/Message';
 import {DialogsActionTypes, newMessageTextAC, sendNewMessageTextAC} from '../../redux/dialogsReducer';
-import { RootStateType } from '../../redux/state';
+import { RootStateType } from '../../redux/store';
+import { AppStateType } from '../../redux/redux-store';
 
 type DialogsPropsType = {
-    state: RootStateType
+    state: AppStateType
     dispatch: (action: DialogsActionTypes) => void
 }
 
 export function Dialogs(props: DialogsPropsType) {
+    debugger
 
-    let dialogsElements = props.state.dialogsPage.dialogs.map( d => <Dialog name={d.name} id={d.id}/>);
-    let messagesElements = props.state.dialogsPage.messages.map( m => <Message message={m.message}/>);
+    let dialogsElements = props.state.dialogsReducer.dialogs.map( d => <Dialog name={d.name} id={d.id}/>);
+    let messagesElements = props.state.dialogsReducer.messages.map( m => <Message message={m.message}/>);
 
     let newMessageElement = React.createRef<HTMLTextAreaElement>();
     let sendMessage = () => {
@@ -39,7 +41,7 @@ export function Dialogs(props: DialogsPropsType) {
             <div></div>
             <div>
                 <textarea ref={newMessageElement}
-                          value={props.state.dialogsPage.newMessage}
+                          value={props.state.dialogsReducer.newMessage}
                           onChange={onChangeMessage}
                           placeholder="Enter your message"></textarea>
                 <div>

@@ -6,10 +6,10 @@ import {Profile} from './components/profile/Profile';
 import {Footer} from './components/footer/Footer';
 import {Dialogs} from './components/dialogs/Dialogs';
 import {BrowserRouter, Route} from 'react-router-dom';
-import {StoreType} from './redux/state';
+import {StoreType} from './redux/store';
 
 type AppPropsType = {
-    store: StoreType
+    store: any
 }
 
 function App(props: AppPropsType) {

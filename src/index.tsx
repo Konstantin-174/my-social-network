@@ -1,11 +1,11 @@
 import * as serviceWorker from './serviceWorker';
-import {store} from './redux/state';
+import store, {AppStateType} from './redux/redux-store';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import App from './App';
-import {RootStateType} from './redux/state';
+import {RootStateType} from './redux/store';
 
-export const rerenderApp = (state: RootStateType) => {
+export const rerenderApp = (state: AppStateType) => {
     ReactDOM.render(
         <React.StrictMode>
             <App store={store}/>
@@ -13,8 +13,11 @@ export const rerenderApp = (state: RootStateType) => {
     );
 }
 rerenderApp(store.getState())
-
-store.subscribe(rerenderApp);
+store.subscribe(() => {
+        let state = store.getState()
+        rerenderApp(state)
+    }
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
