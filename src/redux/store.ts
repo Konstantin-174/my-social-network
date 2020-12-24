@@ -1,16 +1,17 @@
 import dialogsReducer, { DialogsActionTypes } from "./dialogsReducer"
 import profileReducer, { ProfileActionsType } from "./profileReducer"
+import {v1} from 'uuid';
 
 export type DialogsType = {
-    id: number
+    id: string
     name: string
 }
 export type MessageType = {
-    id: number
+    id: string
     message: string
 }
 export type PostsType = {
-    id: number
+    id: string
     message: string
     likesCount: number
 }
@@ -41,22 +42,22 @@ export let store: StoreType = {
     _state: {
         dialogsPage: {
             dialogs: [
-                {id: 1, name: 'Dimon'},
-                {id: 2, name: 'Vovan'},
-                {id: 3, name: 'Andrew'},
-                {id: 4, name: 'Antony'}
+                {id: v1(), name: 'Dimon'},
+                {id: v1(), name: 'Vovan'},
+                {id: v1(), name: 'Andrew'},
+                {id: v1(), name: 'Antony'}
             ] as Array<DialogsType>,
             messages: [
-                {id: 1, message: "Hey guys! How are you doing?"},
-                {id: 2, message: "Hey bro! We're fine, thanks"},
-                {id: 3, message: "Antony! Where is my money!?"}
+                {id: v1(), message: "Hey guys! How are you doing?"},
+                {id: v1(), message: "Hey bro! We're fine, thanks"},
+                {id: v1(), message: "Antony! Where is my money!?"}
             ] as Array<MessageType>,
             newMessage: "" as string
         },
         profilePage: {
             posts: [
-                {id: 1, message: "Hey bro! What's up?", likesCount: 12},
-                {id: 2, message: "Keep calm and do hard working!!!", likesCount: 25},
+                {id: v1(), message: "Hey bro! What's up?", likesCount: 12},
+                {id: v1(), message: "Keep calm and do hard working!!!", likesCount: 25},
             ] as Array<PostsType>,
             newText: "" as string
         }

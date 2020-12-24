@@ -1,4 +1,5 @@
 import {DialogsPageType, DialogsType, MessageType } from "./store"
+import {v1} from 'uuid';
 
 const NEW_MESSAGE_TEXT = 'NEW-MESSAGE-TEXT'
 const SEND_NEW_MESSAGE_TEXT = 'SEND-NEW-MESSAGE-TEXT'
@@ -16,27 +17,27 @@ export const sendNewMessageTextAC = (newMessage: string) => ({
 
 let initialState = {
     dialogs: [
-        {id: 1, name: 'Dimon'},
-        {id: 2, name: 'Vovan'},
-        {id: 3, name: 'Andrew'},
-        {id: 4, name: 'Antony'}
+        {id: v1(), name: 'Dimon'},
+        {id: v1(), name: 'Vovan'},
+        {id: v1(), name: 'Andrew'},
+        {id: v1(), name: 'Antony'}
     ] as Array<DialogsType>,
     messages: [
-        {id: 1, message: "Hey guys! How are you doing?"},
-        {id: 2, message: "Hey bro! We're fine, thanks"},
-        {id: 3, message: "Antony! Where is my money!?"}
+        {id: v1(), message: "Hey guys! How are you doing?"},
+        {id: v1(), message: "Hey bro! We're fine, thanks"},
+        {id: v1(), message: "Antony! Where is my money!?"}
     ] as Array<MessageType>,
     newMessage: "" as string
 }
 
 const dialogsReducer = (state: DialogsPageType = initialState, action: DialogsActionTypes) => {
     switch (action.type) {
-        case 'NEW-MESSAGE-TEXT':
+        case NEW_MESSAGE_TEXT:
             state.newMessage = action.newMessage
             return state
-        case 'SEND-NEW-MESSAGE-TEXT':
+        case SEND_NEW_MESSAGE_TEXT:
             const newMessage: MessageType = {
-                id: 4,
+                id: v1(),
                 message: state.newMessage
             }
             state.messages.push(newMessage);
