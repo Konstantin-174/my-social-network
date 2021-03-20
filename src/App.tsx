@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.scss';
+import './styles/App.scss';
+import './styles/normalize.css'
 import {Header} from './components/header/Header';
 import {Navbar} from './components/navbar/Navbar';
 import {Profile} from './components/profile/Profile';
-import {Footer} from './components/footer/Footer';
 import {Dialogs} from './components/dialogs/Dialogs';
 import {BrowserRouter, Route} from 'react-router-dom';
 
@@ -16,10 +16,10 @@ function App(props: AppPropsType) {
 
     return (
         <BrowserRouter>
-            <div className="app_wrapper">
+            <section className="section_inner">
                 <Header/>
                 <Navbar/>
-                <div className="app_wrapper_content">
+                <div className="section_inner-content">
                     <Route path="/profile" render={() => <Profile state={state}
                                                                   dispatch={props.store.dispatch.bind(props.store)}
                     />}/>
@@ -27,8 +27,7 @@ function App(props: AppPropsType) {
                                                                   dispatch={props.store.dispatch.bind(props.store)}
                     />}/>
                 </div>
-                <Footer/>
-            </div>
+            </section>
         </BrowserRouter>
     );
 }

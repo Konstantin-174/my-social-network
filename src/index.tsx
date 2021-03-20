@@ -3,7 +3,6 @@ import store, {AppStateType} from './redux/redux-store';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import App from './App';
-import {RootStateType} from './redux/store';
 
 export const rerenderApp = (state: AppStateType) => {
     ReactDOM.render(
