@@ -3,20 +3,20 @@ import { NavLink } from 'react-router-dom';
 
 export function Navbar() {
     return (
-        <section className="section_inner-nav">
+        <nav className="section-inner section-navbar">
             <div>
-                <NavLink to="/profile" className="app_wrapper__nav-active">Profile</NavLink>
+                <NavLink to="/profile" className="section-navbar__active">Profile</NavLink>
             </div>
             <div>
                 {/* Задача NavLink без перезагрузки поменять url в адресной строке браузера (аналог тега </a>) */}
-                <NavLink to="/dialogs" className="app_wrapper__nav-active">Messages</NavLink>
+                <NavLink to="/dialogs" className="section-navbar__active">Messages</NavLink>
             </div>
             <div>
-                <a href="#s">News</a>
+                <a href="#">News</a>
             </div>
             <div>
-                <a href="#s">Friends</a>
+                <a href="#">Friends</a>
             </div>
-        </section>
+        </nav>
     )
 }

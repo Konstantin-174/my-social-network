@@ -29,7 +29,7 @@ export function MyPosts(props: MyPostsPropsType) {
     }
 
     return (
-        <div className={s.posts}>
+        <section className={s.posts}>
             MY POSTS
             <div>
                 <div>
@@ -44,6 +44,6 @@ export function MyPosts(props: MyPostsPropsType) {
                 </div>
             </div>
             {postsElements}
-        </div>
+        </section>
     )
 }

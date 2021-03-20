@@ -1,52 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+@import "normalize";
 
+// === Mixins ===
+@mixin Code_Pro {
+    font-family: 'Source Code Pro', monospace;
+}
+
+@mixin Ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+// === / Mixins ===
+
+
+// === Common ===
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    background-image: url("../images/bg_image_root.jpg");
+    @include Code_Pro;
+
+    background-color: #ffff;
 }
 
-.section_outer {
+.section-outer {
+    overflow: hidden;
+    width: 70%;
+    margin: auto;
+    border-radius: 10px;
     border: 3px solid red;
 }
 
-.section_inner {
-    display: grid;
+.section-inner {
+    //border: 1px solid red;
+    margin: 10px;
 
-    grid-template-areas:
-        "h h"
-        "n c";
-
-    grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr;
-
-    font-family: 'Source Code Pro', monospace;
-    color: #01ff2b;
-    margin: 0 auto;
-    width: 70%;
-
-    &-header {
-        grid-area: h;
-        background-color: dimgray;
+}
+// === / Common ===
 
 
-        img {
-            padding: 5px;
-            width: 50px;
-            height: 50px;
-        }
+
+// === Header ===
+.section-header {
+    background-color: dimgray;
+    height: 60px;
+    margin: 20px 20px 0 20px;
+
+    .section-wrapper {
+        display: flex;
     }
 
-    &-nav {
-        grid-area: n;
+    &__logo {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+
+        img {
+            width: 100%;
+        }
+    }
+    &__text {}
+}
+
+// === / Header ===
+
+// === Content ===
+.section-content {
+    display: flex;
+
+    .section-navbar {
+        width: 20%;
         background-color: #484e4d;
         padding: 10px;
 
         a {
             text-decoration-line: none;
             color: #01ff2b;
+            transition: .3s;
+
+            &:hover {
+                color: yellowgreen;
+                opacity: .7;
+            }
         }
 
         a.active {
@@ -54,13 +93,15 @@ body {
         }
     }
 
-
-    &-content {
-        grid-area: c;
+    .section-profile {
         background-color: slategray;
-
-
     }
 }
+
+
+// === / Content ===
+
+
+
 
 

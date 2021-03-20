@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles/App.scss';
-import './styles/normalize.css'
 import {Header} from './components/header/Header';
 import {Navbar} from './components/navbar/Navbar';
 import {Profile} from './components/profile/Profile';
@@ -16,18 +15,20 @@ function App(props: AppPropsType) {
 
     return (
         <BrowserRouter>
-            <section className="section_inner">
+            <div className="section-outer">
                 <Header/>
-                <Navbar/>
-                <div className="section_inner-content">
-                    <Route path="/profile" render={() => <Profile state={state}
-                                                                  dispatch={props.store.dispatch.bind(props.store)}
-                    />}/>
-                    <Route path="/dialogs" render={() => <Dialogs state={state}
-                                                                  dispatch={props.store.dispatch.bind(props.store)}
-                    />}/>
-                </div>
-            </section>
+                <section className="section-inner section-content">
+                    <Navbar/>
+                    <section className="section-inner section-profile">
+                        <Route path="/profile" render={() => <Profile state={state}
+                                                                      dispatch={props.store.dispatch.bind(props.store)}
+                        />}/>
+                        <Route path="/dialogs" render={() => <Dialogs state={state}
+                                                                      dispatch={props.store.dispatch.bind(props.store)}
+                        />}/>
+                    </section>
+                </section>
+            </div>
         </BrowserRouter>
     );
 }

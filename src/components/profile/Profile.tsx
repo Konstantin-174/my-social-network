@@ -12,12 +12,12 @@ type ProfilePropsType = {
 
 export function Profile(props: ProfilePropsType) {
     return (
-        <div className={s.content}>
+        <section className={s.content}>
             <ProfileInfo/>
             <MyPosts newText={props.state.profileReducer.newText}
                      posts={props.state.profileReducer.posts}
                      dispatch={props.dispatch}
             />
-        </div>
+        </section>
     )
 }
