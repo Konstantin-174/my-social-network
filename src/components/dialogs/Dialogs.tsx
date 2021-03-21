@@ -1,9 +1,7 @@
 import React from 'react';
-import s from './Dialogs.module.css'
 import {Dialog} from './dialog/Dialog';
 import {Message} from './message/Message';
 import {DialogsActionTypes, newMessageTextAC, sendNewMessageTextAC} from '../../redux/dialogsReducer';
-import { RootStateType } from '../../redux/store';
 import { AppStateType } from '../../redux/redux-store';
 
 type DialogsPropsType = {
@@ -31,11 +29,11 @@ export function Dialogs(props: DialogsPropsType) {
     }
 
     return (
-        <div className={s.dialogs_item}>
-            <div className={s.dialogs}>
+        <div className="">
+            <div className="">
                 {dialogsElements}
             </div>
-            <div className={s.messages}>
+            <div className="">
                 {messagesElements}
             </div>
             <div></div>

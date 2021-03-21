@@ -4,11 +4,11 @@
 
 // === Mixins ===
 @mixin Code_Pro {
-    font-family: 'Source Code Pro', monospace;
+  font-family: 'Source Code Pro', monospace;
 }
 
 @mixin Ubuntu {
-    font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 // === / Mixins ===
@@ -16,92 +16,143 @@
 
 // === Common ===
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    @include Code_Pro;
+  @include Code_Pro;
 
-    background-color: #ffff;
+  background-color: lightgray;
 }
 
 .section-outer {
-    overflow: hidden;
-    width: 70%;
-    margin: auto;
-    border-radius: 10px;
-    border: 3px solid red;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  width: 70%;
+  margin: auto;
+  border-radius: 10px;
+  border: 1px solid green;
 }
 
 .section-inner {
-    //border: 1px solid red;
-    margin: 10px;
-
+  border: 1px solid red;
+  border-radius: 10px;
 }
+
 // === / Common ===
 
 
-
 // === Header ===
+.section-inner.section-header {
+  margin: 10px 10px 0 10px;
+}
+
 .section-header {
-    background-color: dimgray;
-    height: 60px;
-    margin: 20px 20px 0 20px;
+  background-color: dimgray;
+  height: 60px;
 
-    .section-wrapper {
-        display: flex;
+  .section-wrapper {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__logo {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+
+    img {
+      width: 100%;
     }
+  }
 
-    &__logo {
-        width: 30px;
-        height: 30px;
-        margin: 5px;
-
-        img {
-            width: 100%;
-        }
-    }
-    &__text {}
+  &__text {
+  }
 }
 
 // === / Header ===
 
 // === Content ===
+.section-content.section-inner {
+  margin: 10px;
+}
+
 .section-content {
-    display: flex;
+  display: flex;
 
-    .section-navbar {
-        width: 20%;
-        background-color: #484e4d;
-        padding: 10px;
+}
 
-        a {
-            text-decoration-line: none;
-            color: #01ff2b;
-            transition: .3s;
+.section-navbar {
+  width: 20%;
+  background-color: #484e4d;
+  padding: 10px;
 
-            &:hover {
-                color: yellowgreen;
-                opacity: .7;
-            }
-        }
+  a {
+    text-decoration-line: none;
+    color: #01ff2b;
+    transition: .3s;
 
-        a.active {
-            color: yellowgreen;
-        }
+    &:hover {
+      color: yellowgreen;
+      opacity: .7;
     }
+  }
 
-    .section-profile {
-        background-color: slategray;
-    }
+  a.active {
+    color: yellowgreen;
+  }
+}
+
+.section-profile {
+  background-color: slategray;
+  width: 80%;
 }
 
 
 // === / Content ===
 
+// === ProfileContent ===
+.section-profile__content {
+  display: flex;
+  flex-direction: column;
+}
+
+// === / ProfileContent ===
+
+// === ProfileInfo ===
+.section-profile__info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &-image {
+    height: 300px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &-content {
+
+  }
+}
+
+// === / ProfileInfo ===
 
 
-
+//.dialog  a {
+//    color: #01ff2b;
+//    text-decoration-line: none;
+//}
+//
+//.dialog a.active {
+//    color: yellowgreen;
+//}
 

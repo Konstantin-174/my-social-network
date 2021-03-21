@@ -1,5 +1,4 @@
 import React from 'react';
-import s from './MyPosts.module.css'
 import {Post} from './post/Post';
 import {addPostAC, ProfileActionsType, updateNewPostTextAC} from '../../../redux/profileReducer';
 import { PostsType } from '../../../redux/store';
@@ -29,7 +28,7 @@ export function MyPosts(props: MyPostsPropsType) {
     }
 
     return (
-        <section className={s.posts}>
+        <section className="section-inner">
             MY POSTS
             <div>
                 <div>
