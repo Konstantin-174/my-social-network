@@ -6,46 +6,53 @@ export function Navbar() {
         <nav className="section-inner section-navbar">
             <ul className="nav-wrapper">
                 <li className="nav-wrapper__item">
-                    <div className="nav-wrapper__item-link">
-                        {/* Задача NavLink без перезагрузки поменять url в адресной строке браузера (аналог тега </a>) */}
-                        <NavLink to="/profile" className="section-navbar__active">
-                            <span className="nav-wrapper__item-icon">
+                    {/* Задача NavLink без перезагрузки поменять url в адресной строке браузера (аналог тега </a>) */}
+                    <NavLink to="/profile" activeClassName="active-link">
+                        <div className="nav-wrapper__item-inner">
+                            <div className="nav-wrapper__item-inner_icon">
                                 icon
-                            </span>
-                            Profile
-                        </NavLink>
-                    </div>
+                            </div>
+                            <div className="nav-wrapper__item-inner_link">
+                                Profile
+                            </div>
+                        </div>
+                    </NavLink>
                 </li>
                 <li className="nav-wrapper__item">
-                    <div className="nav-wrapper__item-link">
-                        <NavLink to="/dialogs" className="section-navbar__active">
-                            <span className="nav-wrapper__item-icon">
+                    <NavLink to="/dialogs" activeClassName="active-link">
+                        <div className="nav-wrapper__item-inner">
+                            <div className="nav-wrapper__item-inner_icon">
                                 icon
-                            </span>
-                            Messages
-                        </NavLink>
-                    </div>
+                            </div>
+                            <div className="nav-wrapper__item-inner_link">
+                                Messages
+                            </div>
+                        </div>
+                    </NavLink>
                 </li>
                 <li className="nav-wrapper__item">
-                    <div className="nav-wrapper__item-link">
-                        <a href="#">
-                            <span className="nav-wrapper__item-icon">
+                    <a href="#">
+                        <div className="nav-wrapper__item-inner">
+                            <div className="nav-wrapper__item-inner_icon">
                                 icon
-                            </span>
-                            News
-                        </a>
-                    </div>
+                            </div>
+                            <div className="nav-wrapper__item-inner_link">
+                                Friends
+                            </div>
+                        </div>
+                    </a>
                 </li>
                 <li className="nav-wrapper__item">
-
-                    <div className="nav-wrapper__item-link">
-                        <a href="#">
-                            <span className="nav-wrapper__item-icon">
+                    <a href="#">
+                        <div className="nav-wrapper__item-inner">
+                            <div className="nav-wrapper__item-inner_icon">
                                 icon
-                            </span>
-                            Friends
-                        </a>
-                    </div>
+                            </div>
+                            <div className="nav-wrapper__item-inner_link">
+                                News
+                            </div>
+                        </div>
+                    </a>
                 </li>
             </ul>
         </nav>
