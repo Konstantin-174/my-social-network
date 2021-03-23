@@ -28,7 +28,7 @@ export function MyPosts(props: MyPostsPropsType) {
     }
 
     return (
-        <section className="section-inner">
+        <section className="section-inner profile-wrapper__posts">
             MY POSTS
             <div>
                 <div>

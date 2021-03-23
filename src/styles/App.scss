@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 @import "normalize";
 
-// === Mixins ===
+// === MIXINS ===
 @mixin Code_Pro {
   font-family: 'Source Code Pro', monospace;
 }
@@ -11,10 +11,10 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-// === / Mixins ===
+// === / MIXINS ===
 
 
-// === Common ===
+// === COMMON ===
 * {
   box-sizing: border-box;
   padding: 0;
@@ -24,7 +24,7 @@
 body {
   @include Code_Pro;
 
-  background-color: lightgray;
+  background-color: #cecece;
 }
 
 .section-outer {
@@ -35,7 +35,7 @@ body {
   width: 70%;
   margin: auto;
   border-radius: 10px;
-  border: 1px solid green;
+  border: 1px solid #4d5d53;
 }
 
 .section-inner {
@@ -43,16 +43,16 @@ body {
   border-radius: 10px;
 }
 
-// === / Common ===
+// === / COMMON ===
 
 
-// === Header ===
+// === HEADER ===
 .section-inner.section-header {
   margin: 10px 10px 0 10px;
 }
 
 .section-header {
-  background-color: dimgray;
+  background-color: #505050;
   height: 60px;
 
   .section-wrapper {
@@ -78,12 +78,12 @@ body {
   }
 }
 
-// === / Header ===
+// === / HEADER ===
 
-// === Navbar ===
-.section-navbar {
+// === NAVBAR ===
+.section-content__navbar {
   width: 20%;
-  background-color: #484e4d;
+  background-color: #505050;
   padding: 10px;
   margin-right: 10px;
 
@@ -127,9 +127,9 @@ body {
 
   }
 }
-// === / Navbar ===
+// === / NAVBAR ===
 
-// === Content ===
+// === CONTENT-PROFILE ===
 .section-content.section-inner {
   margin: 10px;
 }
@@ -138,43 +138,47 @@ body {
   display: flex;
 }
 
-.section-profile {
-  background-color: slategray;
+.section-content__profile {
+  background-color: #4C5866;
   width: 80%;
 }
 
 
-// === / Content ===
+// === / CONTENT-PROFILE ===
 
-// === ProfileContent ===
-.section-profile__content {
+// === PROFILE-WRAPPER ===
+.profile-wrapper {
   display: flex;
   flex-direction: column;
-}
 
-// === / ProfileContent ===
+  // === PROFILE-WRAPPER__INFO ===
+  .profile-wrapper__info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 
-// === ProfileInfo ===
-.section-profile__info {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+    &-image {
+      height: 300px;
 
-  &-image {
-    height: 300px;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
 
-    img {
-      height: 100%;
-      width: 100%;
+    &-content {
+
     }
   }
+  // === / PROFILE-WRAPPER__INFO ===
 
-  &-content {
-
-  }
+  // === PROFILE-WRAPPER__POSTS ===
+  .profile-wrapper__posts {}
+  // === / PROFILE-WRAPPER__POSTS ===
 }
 
-// === / ProfileInfo ===
+// === / PROFILE-WRAPPER ===
+
 
 
 //.dialog  a {

@@ -19,7 +19,7 @@ function App(props: AppPropsType) {
                 <Header/>
                 <section className="section-inner section-content">
                     <Navbar/>
-                    <section className="section-inner section-profile">
+                    <section className="section-inner section-content__profile">
                         <Route path="/profile" render={() => <Profile state={state}
                                                                       dispatch={props.store.dispatch.bind(props.store)}
                         />}/>

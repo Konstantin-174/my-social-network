@@ -11,7 +11,7 @@ type ProfilePropsType = {
 
 export function Profile(props: ProfilePropsType) {
     return (
-        <section className="section-inner section-profile__content">
+        <section className="section-inner profile-wrapper">
             <ProfileInfo/>
             <MyPosts newText={props.state.profileReducer.newText}
                      posts={props.state.profileReducer.posts}
