@@ -17,7 +17,7 @@ function App(props: AppPropsType) {
         <BrowserRouter>
             <div className="section-outer">
                 <Header/>
-                <section className="section-inner section-content">
+                <section className="section-content">
                     <Navbar/>
                     <section className="section-inner section-content__profile">
                         <Route path="/profile" render={() => <Profile state={state}
