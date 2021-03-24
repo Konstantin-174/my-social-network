@@ -1,5 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import {BsPeopleFill, BsPersonFill,
+    BsChatFill, BsGrid1X2Fill} from 'react-icons/bs'
 
 export function Navbar() {
     return (
@@ -10,10 +12,10 @@ export function Navbar() {
                     <NavLink to="/profile" activeClassName="active-link">
                         <div className="nav-wrapper__item-inner">
                             <div className="nav-wrapper__item-inner_icon">
-                                icon
+                                <BsPersonFill/>
                             </div>
                             <div className="nav-wrapper__item-inner_link">
-                                Profile
+                                PROFILE
                             </div>
                         </div>
                     </NavLink>
@@ -22,10 +24,10 @@ export function Navbar() {
                     <NavLink to="/dialogs" activeClassName="active-link">
                         <div className="nav-wrapper__item-inner">
                             <div className="nav-wrapper__item-inner_icon">
-                                icon
+                                <BsChatFill/>
                             </div>
                             <div className="nav-wrapper__item-inner_link">
-                                Messages
+                                MESSAGES
                             </div>
                         </div>
                     </NavLink>
@@ -34,10 +36,10 @@ export function Navbar() {
                     <a href="#">
                         <div className="nav-wrapper__item-inner">
                             <div className="nav-wrapper__item-inner_icon">
-                                icon
+                                <BsPeopleFill/>
                             </div>
                             <div className="nav-wrapper__item-inner_link">
-                                Friends
+                                FRIENDS
                             </div>
                         </div>
                     </a>
@@ -46,10 +48,10 @@ export function Navbar() {
                     <a href="#">
                         <div className="nav-wrapper__item-inner">
                             <div className="nav-wrapper__item-inner_icon">
-                                icon
+                                <BsGrid1X2Fill/>
                             </div>
                             <div className="nav-wrapper__item-inner_link">
-                                News
+                                NEWS
                             </div>
                         </div>
                     </a>
