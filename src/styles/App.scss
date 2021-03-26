@@ -110,12 +110,12 @@ body {
 
   &__item {
     margin-top: 15px;
-    transition: .3s;
 
 
     &-inner {
       display: flex;
       justify-content: left;
+      transition: .3s;
 
       &:hover {
         color: yellowgreen;
@@ -188,18 +188,58 @@ body {
 
   .profile-wrapper__posts-inner {
     display: flex;
+    align-items: center;
+    margin: 10px;
 
-    &-area {
+    &_input {
+      flex-grow: 1;
+
+      textarea {
+        padding: 5px;
+        border-radius: 10px;
+        resize: none;
+        outline: none;
+        height: 80px;
+        width: 100%;
+        background: rgba(255, 255, 255, .3);
+      }
 
     }
 
-    &-btn {
+    &_btn {
+      padding: 15px;
+      margin-left: 10px;
+      color: #01ff2b;
+      transition: .3s;
 
+      &:hover {
+        color: yellowgreen;
+        opacity: .7;
+      }
     }
 
     &_post {
       @include Ubuntu;
 
+      .post-wrapper {
+        display: flex;
+
+        &__image {
+        }
+
+        &__message {
+        }
+      }
+
+      .like-wrapper {
+        display: flex;
+
+        &__likes {
+        }
+
+        &__count {
+        }
+      }
     }
   }
 
