@@ -29,19 +29,18 @@ export function MyPosts(props: MyPostsPropsType) {
 
     return (
         <section className="profile-wrapper__posts">
-            MY POSTS
-            <div>
-                <div>
+                <div className="profile-wrapper__posts-inner">
+                    <div className="profile-wrapper__posts-inner_area">
                     <textarea onChange={onChangePost}
                               ref={newPostElement}
                               value={props.newText}
                     />
+                    </div>
+                    <div className="profile-wrapper__posts-inner_btn">
+                        <button onClick={addPost}>Add post
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <button onClick={addPost}>Add post
-                    </button>
-                </div>
-            </div>
             {postsElements}
         </section>
     )

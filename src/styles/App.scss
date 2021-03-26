@@ -82,6 +82,7 @@ body {
   display: flex;
   margin: 0 10px 10px 10px;
 }
+
 // === / CONTENT ===
 
 // === NAVBAR ===
@@ -126,7 +127,7 @@ body {
         margin-left: 30px;
       }
 
-      &_link{
+      &_link {
 
       }
 
@@ -134,11 +135,12 @@ body {
 
   }
 }
+
 // === / NAVBAR ===
 
 // === CONTENT-PROFILE ===
 .section-content__profile {
-  background-color: #4C5866;
+
   overflow: hidden;
   width: 80%;
 }
@@ -155,6 +157,9 @@ body {
   .profile-wrapper__info {
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #4C5866;
 
     &-image {
       height: 300px;
@@ -169,15 +174,39 @@ body {
 
     }
   }
+
   // === / PROFILE-WRAPPER__INFO ===
 
   // === PROFILE-WRAPPER__POSTS ===
-  .profile-wrapper__posts {}
+  .profile-wrapper__posts {
+
+    margin-top: 10px;
+    background-color: #4C5866;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .profile-wrapper__posts-inner {
+    display: flex;
+
+    &-area {
+
+    }
+
+    &-btn {
+
+    }
+
+    &_post {
+      @include Ubuntu;
+
+    }
+  }
+
   // === / PROFILE-WRAPPER__POSTS ===
 }
 
 // === / PROFILE-WRAPPER ===
-
 
 
 //.dialog  a {
