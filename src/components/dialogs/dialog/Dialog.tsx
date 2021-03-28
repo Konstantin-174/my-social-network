@@ -8,8 +8,8 @@ export type DialogPropsType = {
 
 export function Dialog(props: DialogPropsType) {
     return (
-        <div className="">
-            <NavLink to={"/dialogs/" + props.id} activeClassName="">{props.name}</NavLink>
+        <div className="dialogs-wrapper__content-dialog_links">
+            <NavLink to={"/dialogs/" + props.id} activeClassName="active-link">{props.name}</NavLink>
         </div>
     )
 }
