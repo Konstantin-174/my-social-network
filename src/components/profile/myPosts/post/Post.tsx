@@ -1,4 +1,5 @@
 import React from 'react';
+import {AiFillLike} from 'react-icons/ai'
 
 type PostPropsType = {
     message: string
@@ -17,7 +18,9 @@ export function Post(props: PostPropsType) {
                 </div>
             </div>
             <div className="like-wrapper">
-                <div className="like-wrapper__likes">likes</div>
+                <div className="like-wrapper__likes">
+                    <AiFillLike size="1.2em"/>
+                </div>
                 <div className="like-wrapper__count">{props.likesCount}</div>
             </div>
         </div>
