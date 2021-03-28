@@ -251,18 +251,20 @@ body {
 
       .like-wrapper {
         display: flex;
+        width: 90px;
         margin-left: 10px;
         margin-bottom: 5px;
         color: #01ff2b;
+        transition: .3s;
+
+        &:hover {
+          color: yellowgreen;
+          opacity: .7;
+        }
 
         &__likes {
-          transition: .3s;
           align-items: center;
 
-          &:hover {
-            color: yellowgreen;
-            opacity: .7;
-          }
         }
 
         &__count {
@@ -277,6 +279,78 @@ body {
 
 // === / PROFILE-WRAPPER ===
 
+// === DIALOGS-WRAPPER ===
+.dialogs-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  //border: 1px solid red;
+  border-radius: 10px;
+  height: 100%;
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+
+    &-dialog {
+      width: 200px;
+      border-radius: 10px;
+      background-color: #4C5866;
+
+    }
+
+    &-messages {
+      @include Ubuntu;
+      margin-left: 10px;
+      padding: 5px 10px 5px 10px;
+
+      flex-grow: 1;
+      border-radius: 10px;
+      background-color: #4C5866;
+    }
+  }
+
+  &__input {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #4C5866;
+
+    &-area {
+      flex-grow: 1;
+
+      textarea {
+        margin: 10px;
+        padding: 5px;
+        border-radius: 10px;
+        resize: none;
+        outline: none;
+        height: 100%;
+        width: 100%;
+        background: rgba(255, 255, 255, .3);
+      }
+    }
+
+    &-btn {
+      padding: 15px;
+      margin-left: 10px;
+      color: #01ff2b;
+      transition: .3s;
+
+      &:hover {
+        color: yellowgreen;
+        opacity: .7;
+      }
+    }
+  }
+
+
+}
+
+
+// === / DIALOGS-WRAPPER ===
 
 //.dialog  a {
 //    color: #01ff2b;
