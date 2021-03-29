@@ -6,6 +6,8 @@ export type MessagePropsType = {
 
 export function Message(props: MessagePropsType) {
     return (
-        <div className="">{props.message}</div>
+        <div className="dialogs-wrapper__content-messages_request">
+            {props.message}
+        </div>
     )
 }

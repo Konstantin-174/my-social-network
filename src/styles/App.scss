@@ -236,8 +236,8 @@ body {
           margin: 5px;
           width: 100px;
           height: 100px;
-          //border: 1px solid red;
           border-radius: 100%;
+          flex-shrink: 0;
 
           img {
             width: 100%;
@@ -246,6 +246,7 @@ body {
 
         &__message {
           margin-left: 50px;
+          padding: 10px;
         }
       }
 
@@ -297,6 +298,7 @@ body {
       width: 150px;
       border-radius: 10px;
       background-color: #4C5866;
+      flex-shrink: 0;
 
       &_links {
         display: flex;
@@ -329,6 +331,19 @@ body {
       flex-grow: 1;
       border-radius: 10px;
       background-color: #4C5866;
+
+      &_request {
+        border: 1px solid red;
+
+        &:before {
+
+        }
+
+        &:after {
+
+        }
+
+      }
     }
   }
 
