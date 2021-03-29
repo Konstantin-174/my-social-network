@@ -1,5 +1,6 @@
 import React from 'react';
 import {Post} from './post/Post';
+import classes from './MyPosts.module.scss'
 import {addPostAC, ProfileActionsType, updateNewPostTextAC} from '../../../redux/profileReducer';
 import { PostsType } from '../../../redux/store';
 import {FiArrowDown} from 'react-icons/fi'
@@ -29,15 +30,15 @@ export function MyPosts(props: MyPostsPropsType) {
     }
 
     return (
-        <section className="profile-wrapper__posts">
-            <div className="profile-wrapper__posts-inner">
-                <div className="profile-wrapper__posts-inner_input">
+        <section className={classes.profileWrapperPosts}>
+            <div className={classes.postsInner}>
+                <div className={classes.postsInnerInput}>
                     <textarea onChange={onChangePost}
                               ref={newPostElement}
                               value={props.newText}
                     />
                 </div>
-                <div className="profile-wrapper__posts-inner_btn">
+                <div className={classes.postsInnerBtn}>
                     <FiArrowDown size="2em" onClick={addPost} color=""/>
                 </div>
             </div>

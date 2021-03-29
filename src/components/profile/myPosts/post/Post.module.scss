@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+@mixin Ubuntu {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.post {
+  @include Ubuntu;
+  margin: 35px;
+  background: rgba(255, 255, 255, .15);
+  //border: 1px solid red;
+  border-radius: 10px;
+
+
+  .postWrapper {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+
+    .postWrapperImage {
+      margin: 5px;
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .postWrapperMessage {
+      margin-left: 50px;
+      padding: 10px;
+    }
+  }
+
+  .likeWrapper {
+    display: flex;
+    width: 90px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    color: #01ff2b;
+    transition: .3s;
+
+    &:hover {
+      color: yellowgreen;
+      opacity: .7;
+    }
+
+    .likeWrapperLikes {
+      align-items: center;
+
+    }
+
+    .likeWrapperCount {
+      margin-left: 10px;
+    }
+  }
+}

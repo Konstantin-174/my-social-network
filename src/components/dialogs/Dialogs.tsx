@@ -1,6 +1,7 @@
 import React from 'react';
 import {Dialog} from './dialog/Dialog';
 import {Message} from './message/Message';
+import classes from './Dialogs.module.scss'
 import {DialogsActionTypes, newMessageTextAC, sendNewMessageTextAC} from '../../redux/dialogsReducer';
 import { AppStateType } from '../../redux/redux-store';
 import {FiArrowUpLeft} from 'react-icons/fi';
@@ -30,24 +31,24 @@ export function Dialogs(props: DialogsPropsType) {
     }
 
     return (
-        <div className="dialogs-wrapper">
-            <div className="dialogs-wrapper__content">
-                <div className="dialogs-wrapper__content-dialog">
+        <div className={classes.dialogsWrapper}>
+            <div className={classes.content}>
+                <div className={classes.contentDialog}>
                     {dialogsElements}
                 </div>
-                <div className="dialogs-wrapper__content-messages">
+                <div className={classes.contentMessages}>
                     {messagesElements}
                 </div>
             </div>
-            <div className="dialogs-wrapper__input">
-                <div className="dialogs-wrapper__input-area">
+            <div className={classes.input}>
+                <div className={classes.inputArea}>
                     <textarea ref={newMessageElement}
                               value={props.state.dialogsReducer.newMessage}
                               onChange={onChangeMessage}
                               placeholder="Enter your message"
                     />
                 </div>
-                <div className="dialogs-wrapper__input-btn">
+                <div className={classes.inputBtn}>
                     <FiArrowUpLeft onClick={sendMessage} size="2em" color=""/>
                 </div>
             </div>

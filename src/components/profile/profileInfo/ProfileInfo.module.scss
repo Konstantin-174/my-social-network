@@ -1,0 +1,20 @@
+.profileWrapperInfo {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #4C5866;
+
+  .image {
+    height: 300px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .content {
+
+  }
+}

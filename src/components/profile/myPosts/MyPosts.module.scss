@@ -1,0 +1,40 @@
+.profileWrapperPosts {
+
+  margin-top: 10px;
+  background-color: #4C5866;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.postsInner {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+
+  .postsInnerInput {
+    flex-grow: 1;
+
+    textarea {
+      padding: 5px;
+      border-radius: 10px;
+      resize: none;
+      outline: none;
+      height: 80px;
+      width: 100%;
+      background: rgba(255, 255, 255, .3);
+    }
+
+  }
+
+  .postsInnerBtn {
+    padding: 15px;
+    margin-left: 10px;
+    color: #01ff2b;
+    transition: .3s;
+
+    &:hover {
+      color: yellowgreen;
+      opacity: .7;
+    }
+  }
+}

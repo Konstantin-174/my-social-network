@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './Profile.module.scss'
 import {MyPosts} from './myPosts/MyPosts';
 import {ProfileInfo} from './profileInfo/ProfileInfo';
 import { ProfileActionsType } from '../../redux/profileReducer';
@@ -11,7 +12,7 @@ type ProfilePropsType = {
 
 export function Profile(props: ProfilePropsType) {
     return (
-        <section className="profile-wrapper">
+        <section className={classes.profileWrapper}>
             <ProfileInfo/>
             <MyPosts newText={props.state.profileReducer.newText}
                      posts={props.state.profileReducer.posts}

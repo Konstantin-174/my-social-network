@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import classes from './Dialog.module.scss'
 
 export type DialogPropsType = {
     name: string
@@ -8,8 +9,8 @@ export type DialogPropsType = {
 
 export function Dialog(props: DialogPropsType) {
     return (
-        <div className="dialogs-wrapper__content-dialog_links">
-            <NavLink to={"/dialogs/" + props.id} activeClassName="active-link">{props.name}</NavLink>
+        <div className={classes.links}>
+            <NavLink to={"/dialogs/" + props.id} activeClassName={classes.activeLink}>{props.name}</NavLink>
         </div>
     )
 }
