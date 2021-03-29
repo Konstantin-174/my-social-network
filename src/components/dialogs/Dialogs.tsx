@@ -13,8 +13,8 @@ type DialogsPropsType = {
 export function Dialogs(props: DialogsPropsType) {
     debugger
 
-    let dialogsElements = props.state.dialogsReducer.dialogs.map( d => <Dialog name={d.name} id={d.id}/>);
-    let messagesElements = props.state.dialogsReducer.messages.map( m => <Message message={m.message}/>);
+    let dialogsElements = props.state.dialogsReducer.dialogs.map( d => <Dialog key={d.id} name={d.name} id={d.id}/>);
+    let messagesElements = props.state.dialogsReducer.messages.map( m => <Message key={m.id} message={m.message}/>);
 
     let newMessageElement = React.createRef<HTMLTextAreaElement>();
     let sendMessage = () => {

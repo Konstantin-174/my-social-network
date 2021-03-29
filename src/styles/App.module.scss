@@ -1,0 +1,20 @@
+.sectionOuter {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  width: 70%;
+  margin: 15px auto;
+  border-radius: 10px;
+  border: 1px solid #4d5d53;
+}
+
+.sectionContent {
+  display: flex;
+  margin: 0 10px 10px 10px;
+}
+
+.sectionContentProfile {
+  overflow: hidden;
+  width: 80%;
+}

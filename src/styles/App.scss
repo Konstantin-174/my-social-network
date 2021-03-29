@@ -28,127 +28,6 @@ body {
   color: #202020;
 }
 
-.section-outer {
-  display: flex;
-  flex-direction: column;
-
-  overflow: hidden;
-  width: 70%;
-  margin: 15px auto;
-  border-radius: 10px;
-  border: 1px solid #4d5d53;
-}
-
-.section-inner {
-  //border: 1px solid red;
-  border-radius: 10px;
-}
-
-// === / COMMON ===
-
-
-// === HEADER ===
-.section-header {
-  background-color: #505050;
-  height: 60px;
-  margin: 10px;
-
-  .section-wrapper {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__logo {
-    width: 30px;
-    height: 30px;
-    margin: 15px;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  &__text {
-    margin-right: 45px;
-  }
-}
-
-// === / HEADER ===
-
-// === CONTENT ===
-.section-content {
-  display: flex;
-  margin: 0 10px 10px 10px;
-}
-
-// === / CONTENT ===
-
-// === NAVBAR ===
-.section-content__navbar {
-  width: 20%;
-  background-color: #505050;
-  padding: 10px;
-  margin-right: 10px;
-
-  a {
-    text-decoration-line: none;
-    color: #01ff2b;
-  }
-
-  .active-link {
-    color: yellowgreen;
-  }
-}
-
-.nav-wrapper {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-
-  &__item {
-    margin-top: 15px;
-
-
-    &-inner {
-      display: flex;
-      justify-content: left;
-      transition: .3s;
-
-      &:hover {
-        color: yellowgreen;
-        opacity: .7;
-      }
-
-      &_icon {
-        margin-right: 10px;
-        margin-left: 30px;
-      }
-
-      &_link {
-
-      }
-
-    }
-
-  }
-}
-
-// === / NAVBAR ===
-
-// === CONTENT-PROFILE ===
-.section-content__profile {
-
-  overflow: hidden;
-  width: 80%;
-}
-
-
-// === / CONTENT-PROFILE ===
-
 // === PROFILE-WRAPPER ===
 .profile-wrapper {
   display: flex;
@@ -327,7 +206,9 @@ body {
       @include Ubuntu;
       margin-left: 10px;
       padding: 5px 10px 5px 10px;
-
+      overflow-x:hidden;
+      height: 500px;
+      overflow-y:auto;
       flex-grow: 1;
       border-radius: 10px;
       background-color: #4C5866;

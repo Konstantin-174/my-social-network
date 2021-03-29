@@ -1,56 +1,57 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import classes from './Navbar.module.scss'
 import {BsPeopleFill, BsPersonFill,
     BsChatFill, BsGrid1X2Fill} from 'react-icons/bs'
 
 export function Navbar() {
     return (
-        <nav className="section-inner section-content__navbar">
-            <ul className="nav-wrapper">
-                <li className="nav-wrapper__item">
+        <nav className={classes.sectionContentNavbar}>
+            <ul className={classes.navWrapper}>
+                <li className={classes.item}>
                     {/* Задача NavLink без перезагрузки поменять url в адресной строке браузера (аналог тега </a>) */}
-                    <NavLink to="/profile" activeClassName="active-link">
-                        <div className="nav-wrapper__item-inner">
-                            <div className="nav-wrapper__item-inner_icon">
+                    <NavLink to="/profile" activeClassName={classes.activeLink}>
+                        <div className={classes.itemInner}>
+                            <div className={classes.itemIcon}>
                                 <BsPersonFill/>
                             </div>
-                            <div className="nav-wrapper__item-inner_link">
+                            <div className="">
                                 PROFILE
                             </div>
                         </div>
                     </NavLink>
                 </li>
-                <li className="nav-wrapper__item">
-                    <NavLink to="/dialogs" activeClassName="active-link">
-                        <div className="nav-wrapper__item-inner">
-                            <div className="nav-wrapper__item-inner_icon">
+                <li className={classes.item}>
+                    <NavLink to="/dialogs" activeClassName={classes.activeLink}>
+                        <div className={classes.itemInner}>
+                            <div className={classes.itemIcon}>
                                 <BsChatFill/>
                             </div>
-                            <div className="nav-wrapper__item-inner_link">
+                            <div className="">
                                 MESSAGES
                             </div>
                         </div>
                     </NavLink>
                 </li>
-                <li className="nav-wrapper__item">
+                <li className={classes.item}>
                     <a href="#">
-                        <div className="nav-wrapper__item-inner">
-                            <div className="nav-wrapper__item-inner_icon">
+                        <div className={classes.itemInner}>
+                            <div className={classes.itemIcon}>
                                 <BsPeopleFill/>
                             </div>
-                            <div className="nav-wrapper__item-inner_link">
+                            <div className="">
                                 FRIENDS
                             </div>
                         </div>
                     </a>
                 </li>
-                <li className="nav-wrapper__item">
+                <li className={classes.item}>
                     <a href="#">
-                        <div className="nav-wrapper__item-inner">
-                            <div className="nav-wrapper__item-inner_icon">
+                        <div className={classes.itemInner}>
+                            <div className={classes.itemIcon}>
                                 <BsGrid1X2Fill/>
                             </div>
-                            <div className="nav-wrapper__item-inner_link">
+                            <div className="">
                                 NEWS
                             </div>
                         </div>

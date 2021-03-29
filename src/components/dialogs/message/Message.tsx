@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './Message.module.scss';
 
 export type MessagePropsType = {
     message: string
@@ -6,7 +7,7 @@ export type MessagePropsType = {
 
 export function Message(props: MessagePropsType) {
     return (
-        <div className="dialogs-wrapper__content-messages_request">
+        <div className={classes.messageBody}>
             {props.message}
         </div>
     )

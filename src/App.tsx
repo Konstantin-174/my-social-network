@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/App.scss';
+import classes from "./styles/App.module.scss"
 import {Header} from './components/header/Header';
 import {Navbar} from './components/navbar/Navbar';
 import {Profile} from './components/profile/Profile';
@@ -15,11 +16,11 @@ function App(props: AppPropsType) {
 
     return (
         <BrowserRouter>
-            <div className="section-outer">
+            <div className={classes.sectionOuter}>
                 <Header/>
-                <section className="section-content">
+                <section className={classes.sectionContent}>
                     <Navbar/>
-                    <section className="section-inner section-content__profile">
+                    <section className={classes.sectionContentProfile}>
                         <Route path="/profile" render={() => <Profile state={state}
                                                                       dispatch={props.store.dispatch.bind(props.store)}
                         />}/>

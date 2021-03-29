@@ -1,0 +1,27 @@
+.messageBody {
+  width: 200px;
+  height: auto;
+  border: 1px solid silver;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+
+    background:transparent;
+    border-left: 14px solid #fff;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    //border-top: 10px solid #fff;
+    //border-top: 10px solid #fff;
+    transform: rotate(135deg);
+    left: -10px;
+    bottom: -9.2px;
+  }
+
+}

@@ -1,0 +1,44 @@
+.sectionContentNavbar{
+  width: 20%;
+  background-color: #505050;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+
+  a {
+    text-decoration-line: none;
+    color: #01ff2b;
+  }
+
+  .activeLink {
+    color: yellowgreen;
+  }
+}
+
+.navWrapper {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+
+  .item {
+    margin-top: 15px;
+
+
+    .itemInner {
+      display: flex;
+      justify-content: left;
+      transition: .3s;
+
+      &:hover {
+        color: yellowgreen;
+        opacity: .7;
+      }
+
+      .itemIcon {
+        margin-right: 10px;
+        margin-left: 30px;
+      }
+    }
+  }
+}
