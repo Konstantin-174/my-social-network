@@ -1,27 +1,21 @@
-.messageBody {
-  width: 200px;
-  height: auto;
-  border: 1px solid silver;
-  margin-bottom: 20px;
-  padding: 10px;
-  background: #fff;
-  border-radius: 10px;
-  position: relative;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
-  &:before {
-    content: "";
-    position: absolute;
-
-    background:transparent;
-    border-left: 14px solid #fff;
-    border-right: 10px solid transparent;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid #fff;
-    //border-top: 10px solid #fff;
-    //border-top: 10px solid #fff;
-    transform: rotate(135deg);
-    left: -10px;
-    bottom: -9.2px;
-  }
-
+@mixin Ubuntu {
+  font-family: 'Ubuntu', sans-serif;
 }
+
+.messageBody {
+  @include Ubuntu;
+
+  width: 400px;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, .3);
+  border: 2px solid #505050;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+
