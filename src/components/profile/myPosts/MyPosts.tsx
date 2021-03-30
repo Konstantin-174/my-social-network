@@ -42,7 +42,7 @@ export function MyPosts(props: MyPostsPropsType) {
                     <FiArrowDown size="2em" onClick={addPost} color=""/>
                 </div>
             </div>
-            {postsElements}
+                {postsElements}
         </section>
     )
 }

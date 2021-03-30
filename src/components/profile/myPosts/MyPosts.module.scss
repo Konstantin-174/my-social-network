@@ -1,9 +1,32 @@
 .profileWrapperPosts {
-
   margin-top: 10px;
   background-color: #4C5866;
   border-radius: 10px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 270px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #4C5866;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #01ff2b;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    &:hover {
+      background-color: yellowgreen;
+      opacity: .7;
+    }
+  }
+
 }
 
 .postsInner {
@@ -38,3 +61,4 @@
     }
   }
 }
+
