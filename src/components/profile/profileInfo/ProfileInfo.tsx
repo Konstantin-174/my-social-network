@@ -1,15 +1,45 @@
 import React from 'react';
-import classes from './ProfileInfo.module.scss'
+import local from './ProfileInfo.module.scss';
 
-export function ProfileInfo() {
+const ProfileInfo = () => {
     return (
-        <section className={classes.profileWrapperInfo}>
-            <div className={classes.image}>
-                <img src="https://images.wallpaperscraft.ru/image/ekran_televizor_ispytatelnaia_tablitsa_129823_1024x768.jpg" alt="Profile background"/>
+        <section className={local.infoWrap}>
+            <div className={local.infoItem}>
+                <div className={local.itemTitle}>
+                    Name
+                </div>
+                <div className={local.itemDescription}>
+                    Bender Benderovich
+                </div>
             </div>
-            <div className={classes.content}>
-                AVA + DESCRIPTION
+            <div className={local.infoItem}>
+                <div className={local.itemTitle}>
+                    Birth
+                </div>
+                <div className={local.itemDescription}>
+                    10/11/1989
+                </div>
+            </div>
+            <div className={local.infoItem}>
+                <div className={local.itemTitle}>
+                    Education
+                </div>
+                <div className={local.itemDescription}>
+                    University degree
+                </div>
+            </div>
+            <div className={local.infoItem}>
+                <div className={local.itemTitle}>
+                    Quotes
+                </div>
+                <div className={local.itemDescription}>
+                    <div className={local.descriptionText}>
+                        "I'm going to build my own theme park! With blackjack! And hookers!"
+                    </div>
+                </div>
             </div>
         </section>
     )
 }
+
+export default ProfileInfo;

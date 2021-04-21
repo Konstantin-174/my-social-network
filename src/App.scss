@@ -1,0 +1,26 @@
+.App-wrapper {
+  display: grid;
+
+  grid-template-areas:
+          "head head"
+          "nav cont";
+
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 1000px;
+  border: 1px solid #4C5866;
+  border-radius: 10px;
+
+  .Content {
+    grid-area: cont;
+    
+    margin: 10px 10px 10px 0;
+    background-color: #798081;
+    border: 1px solid #464646;
+    border-radius: 10px;
+  }
+}

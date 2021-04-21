@@ -1,17 +1,13 @@
 import React from 'react';
-import classes from './Header.module.scss';
+import local from './Header.module.scss'
 
-export function Header() {
+const Header = () => {
     return (
-        <header className={classes.sectionHeader}>
-            <div className={classes.sectionWrapper}>
-                <div className={classes.logo}>
-                    <img src="https://image.flaticon.com/icons/png/512/25/25719.png"/>
-                </div>
-                <div className={classes.text}>
-                    WELCOME TO MY SOCIAL NETWORK
-                </div>
-            </div>
+        <header className={local.headerWrap}>
+            <div className={local.headLogo}> </div>
+            <div className={local.headContent}>Welcome to my SocialNetwork</div>
         </header>
     )
 }
+
+export default Header;

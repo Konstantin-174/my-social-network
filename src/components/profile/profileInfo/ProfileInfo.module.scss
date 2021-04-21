@@ -1,20 +1,29 @@
-.profileWrapperInfo {
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #4C5866;
+.infoWrap {
+  margin: 10px 10px 0 10px;
 
-  .image {
-    height: 300px;
+  .infoItem {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
 
-    img {
-      height: 100%;
-      width: 100%;
+    .itemTitle {
+      width: 25%;
+      font-weight: lighter;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .itemDescription {
+      width: 75%;
+      font-size: 20px;
+      color: #33FF00;
+
+      .descriptionText {
+        font-size: 14px;
+        white-space: pre-wrap;
+      }
     }
   }
 
-  .content {
 
-  }
 }

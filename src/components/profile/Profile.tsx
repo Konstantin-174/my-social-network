@@ -1,23 +1,19 @@
 import React from 'react';
-import classes from './Profile.module.scss'
-import {MyPosts} from './myPosts/MyPosts';
-import {ProfileInfo} from './profileInfo/ProfileInfo';
-import { ProfileActionsType } from '../../redux/profileReducer';
-import { AppStateType } from '../../redux/redux-store';
+import local from './Profile.module.scss'
+import Avatar from './avatar/Avatar';
+import ProfileInfo from './profileInfo/ProfileInfo';
+import MyPosts from './posts/MyPosts';
 
-type ProfilePropsType = {
-    state: AppStateType
-    dispatch: (action: ProfileActionsType) => void
-    }
-
-export function Profile(props: ProfilePropsType) {
+const Profile = () => {
     return (
-        <section className={classes.profileWrapper}>
-            <ProfileInfo/>
-            <MyPosts newText={props.state.profileReducer.newText}
-                     posts={props.state.profileReducer.posts}
-                     dispatch={props.dispatch}
-            />
+        <section className={local.profileWrap}>
+          <div className={local.avaDiscript}>
+              <Avatar/>
+              <ProfileInfo/>
+          </div>
+            <MyPosts/>
         </section>
     )
 }
+
+export default Profile;

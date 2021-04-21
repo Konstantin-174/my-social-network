@@ -1,43 +1,23 @@
-.sectionContentNavbar{
-  width: 20%;
-  background-color: #505050;
-  padding: 10px;
-  margin-right: 10px;
+.navWrap {
+  grid-area: nav;
+
+  margin: 10px;
+  font-size: 18px;
+  color: #33FF00;
+  background-color: #4c5866;
+  border: 1px solid #464646;
   border-radius: 10px;
 
-  a {
-    text-decoration-line: none;
-    color: #01ff2b;
-  }
+  .navContent {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 10px 20px;
 
-  .activeLink {
-    color: yellowgreen;
-  }
-}
+    .navItem {
+      margin-bottom: 10px;
 
-.navWrapper {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-
-  .item {
-    margin-top: 15px;
-
-
-    .itemInner {
-      display: flex;
-      justify-content: left;
-      transition: .3s;
-
-      &:hover {
-        color: yellowgreen;
-        opacity: .7;
-      }
-
-      .itemIcon {
-        margin-right: 10px;
-        margin-left: 30px;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }

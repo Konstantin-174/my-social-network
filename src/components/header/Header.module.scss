@@ -1,28 +1,26 @@
-.sectionHeader {
-  background-color: #505050;
-  height: 60px;
-  margin: 10px;
+.headerWrap {
+  grid-area: head;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 10px 10px 0 10px;
+  background-color: #4C5866;
+  border: 1px solid #464646;
   border-radius: 10px;
 
-  .sectionWrapper {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo {
+  .headLogo {
+    margin-left: 10px;
     width: 30px;
     height: 30px;
-    margin: 15px;
-
-    img {
-      width: 100%;
-    }
+    border-radius: 100%;
+    background-color: #33FF00;
   }
 
-  .text {
-    margin-right: 45px;
+  .headContent {
+    margin-right: 50px;
+    font-size: 20px;
+    color: #33FF00;
   }
 }

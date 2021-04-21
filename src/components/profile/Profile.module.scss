@@ -1,4 +1,8 @@
-.profileWrapper {
+.profileWrap {
   display: flex;
   flex-direction: column;
+
+  .avaDiscript {
+    display: flex;
+  }
 }
