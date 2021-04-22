@@ -31,7 +31,6 @@ const Navbar = () => {
                         News
                     </div>
                 </a>
-
             </div>
         </section>
     )
