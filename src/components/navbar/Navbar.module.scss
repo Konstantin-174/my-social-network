@@ -3,7 +3,6 @@
 
   margin: 10px;
   font-size: 18px;
-  color: #33FF00;
   background-color: #4c5866;
   border: 1px solid #464646;
   border-radius: 10px;
@@ -13,11 +12,26 @@
     flex-direction: column;
     margin: 10px 10px 10px 20px;
 
-    .navItem {
+    .link {
+      display: flex;
+      text-decoration: none;
+      align-items: center;
       margin-bottom: 10px;
+      transition: .3s;
+      color: #33ff00;
+
+      .navIcon {
+        margin-right: 10px;
+      }
+
+      .navText { }
 
       &:last-child {
         margin-bottom: 0;
+      }
+
+      &:hover {
+        color: #99CC33;
       }
     }
   }
