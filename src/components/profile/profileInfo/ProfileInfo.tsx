@@ -34,7 +34,7 @@ const ProfileInfo = () => {
                 </div>
                 <div className={local.itemDescription}>
                     <div className={local.descriptionText}>
-                        "I'm going to build my own theme park! With blackjack! And hookers!"
+                        &#8220;I'm going to build my own theme park! With blackjack! And hookers!&#8221;
                     </div>
                 </div>
             </div>

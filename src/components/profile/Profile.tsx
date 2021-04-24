@@ -7,10 +7,10 @@ import MyPosts from './posts/MyPosts';
 const Profile = () => {
     return (
         <section className={local.profileWrap}>
-          <div className={local.avaDiscript}>
-              <Avatar/>
-              <ProfileInfo/>
-          </div>
+            <div className={local.avaDiscript}>
+                <Avatar/>
+                <ProfileInfo/>
+            </div>
             <MyPosts/>
         </section>
     )
